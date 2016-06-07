@@ -51,6 +51,14 @@
             </setBody>
             <log message=">>> ${body} : ${sys.runtime.id}"/>
         </route>
+
+        <route id="log-2-route">
+          <from uri="timer:foo?period=10s"/>
+            <setBody>
+                <simple>Second message from another Camel Route!</simple>
+            </setBody>
+            <log message=">>> ${body} : ${sys.runtime.id}"/>
+        </route>
     </camelContext>
 
 </blueprint>
