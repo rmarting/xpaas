@@ -59,6 +59,14 @@
             </setBody>
             <log message=">>> ${body} : ${sys.runtime.id}"/>
         </route>
+
+        <route id="log-3-route">
+          <from uri="timer:foo?period=60s"/>
+            <setBody>
+                <simple>Message from log-3-route!</simple>
+            </setBody>
+            <log message=">>> ${body} : ${sys.runtime.id}"/>
+        </route>
     </camelContext>
 
 </blueprint>
