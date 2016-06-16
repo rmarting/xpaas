@@ -45,25 +45,17 @@
           route is doing.
         -->
         <route id="log-route">
-          <from uri="timer:foo?period=5s"/>
+          <from uri="timer:foo?period=10s"/>
             <setBody>
-                <simple>Hello from Camel!</simple>
+                <simple>Apache Camel rocks!</simple>
             </setBody>
             <log message=">>> ${body} : ${sys.runtime.id}"/>
         </route>
 
         <route id="log-2-route">
-          <from uri="timer:foo?period=10s"/>
+          <from uri="timer:foo?period=20s"/>
             <setBody>
-                <simple>Second message from another Camel Route!</simple>
-            </setBody>
-            <log message=">>> ${body} : ${sys.runtime.id}"/>
-        </route>
-
-        <route id="log-3-route">
-          <from uri="timer:foo?period=60s"/>
-            <setBody>
-                <simple>Message from log-3-route!</simple>
+                <simple>Testing a second route!</simple>
             </setBody>
             <log message=">>> ${body} : ${sys.runtime.id}"/>
         </route>
